@@ -149,7 +149,7 @@ This will render `./views/styles.sass`
 [Sass'
 options](http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#options) can
 be set globally through Sinatra's configuration, see [Options and
-Configuartion](#configuration), and overridden on an individual basis.
+Configurations](#configuration), and overridden on an individual basis.
 
     set :sass, :style => :compact # default Sass style is :nested
 
