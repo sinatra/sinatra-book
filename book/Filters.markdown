@@ -66,7 +66,7 @@ The return value of a filter is ignored, therefore a request to '/' will return 
 
 However, it is possible to change the response using `halt`:
 
-    get('/') { return @buisness_secrets }
+    get('/') { return @business_secrets }
     after { halt 403, 'you almost got me' }
 
 Pattern matching filters
