@@ -88,7 +88,7 @@ For example, add the following to your app to test against:
 
 Use `set_cookie` for setting and removing cookies, and the access them in your response:
 
-    set_cookie 'foo=bar'
+    response.set_cookie 'foo=bar'
     get '/'
     assert_equal 'Hello bar!', last_response.body 
 
