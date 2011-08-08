@@ -113,7 +113,7 @@ routines. For instance there are handlers for [halting][halting] and
 
 There are also handlers for redirection:
 
-    get '/'
+    get '/' do
       redirect '/someplace/else'
     end
     
