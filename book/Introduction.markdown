@@ -60,7 +60,7 @@ software](http://www.git-scm.com) and [bundler](http://gembundler.com/).
 To use Sinatra _edge_ with bundler, you'll have to create a `Gemfile` listing
 Sinatra's and any other dependencies you're going to need.
 
-    source :rubygems.org
+    source :rubygems
     gem 'sinatra', :git => 'git://github.com/sinatra/sinatra.git'
 
 Here we use the gemcutter source to specify where to get Sinatra's
