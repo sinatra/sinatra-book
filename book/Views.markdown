@@ -4,9 +4,9 @@ Views
 RSS Feed
 --------
 
-The builder gem/library is required to in this recipe
+The [builder][builder] gem/library for creating XML is required in this recipe.
 
-Assume that your site url is http://liftoff.msfc.nasa.gov/.
+Assume that your site url is `http://liftoff.msfc.nasa.gov/`.
 
     get '/rss.xml' do
       builder do |xml|
@@ -31,7 +31,7 @@ Assume that your site url is http://liftoff.msfc.nasa.gov/.
       end
     end
 
-This will render the rss inline, directly from the handler.
+This will render the RSS inline, directly from the handler.
 
 CoffeeScript
 ------------
@@ -95,6 +95,7 @@ in your application, these are a great place to start:
 [therubyracer]: http://github.com/cowboyd/therubyracer
 [coffee-script-repo]: http://github.com/jashkenas/coffee-script
 [coffee-script-url]: http://coffeescript.org/
+[builder]: http://builder.rubyforge.org/
 [rake]: http://rake.rubyforge.org/
 [nodejs]: http://nodejs.org/
 [ruby-coffee-script]: http://github.com/josh/ruby-coffee-script

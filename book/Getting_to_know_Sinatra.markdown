@@ -50,7 +50,7 @@ As you can see from this contrived example, Sinatra's routing is very easy to ge
 along with. Don't be fooled, though, Sinatra can do some pretty amazing things
 with Routes.
 
-Take a more indepth look at [Sinatra's routes][routes], and see for yourself. 
+Take a more in-depth look at [Sinatra's routes][routes], and see for yourself. 
 
 [routes]: http://www.sinatrarb.com/intro#Routes
 [restful-web-services]: http://en.wikipedia.org/wiki/Representational_State_Transfer#RESTful_web_services
@@ -67,7 +67,7 @@ match to the request.
 ### before
 
 The `before` method will let you pass a block to be evaluated **before** _each_
-and_every_ route gets processed.
+and _every_ route gets processed.
 
     before do
       MyStore.connect unless MyStore.connected?
