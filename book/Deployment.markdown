@@ -36,3 +36,41 @@ For more details see [this](http://github.com/sinatra/heroku-sinatra-app)
 
 [Heroku]: http://www.heroku.com
 
+Cloud Foundry
+-------------
+
+This describes how to deploy a classic style Sinatra app on Cloud Foundry:
+
+1. Create a free [account](http://cloudfoundry.com/signup) if you don't have one already
+1. Install the `vmc` Ruby gem
+
+        $ gem install vmc
+
+1. Target the cloudfoundry.com instance and log in
+
+        $ vmc target api.cloudfoundry.com
+        Succesfully targeted to [http://api.cloudfoundry.com]
+        $ vmc login
+        Email: you@gmail.com
+        Password: ********
+        Successfully logged into [http://api.cloudfoundry.com]
+
+1. Go to the root directory of your application, e.g.
+
+        $ cd ~/ruby/sinatra/my-app
+
+1. Deploy the application with
+
+        $ vmc push -n my-app
+        Creating Application: OK
+        Uploading Application:
+          Checking for available resources: OK
+          Packing application: OK
+          Uploading (2K): OK   
+        Push Status: OK
+        Staging Application: OK                                                         
+        Starting Application: OK
+
+You are now able to access your application at [http://my-app.cloudfoundry.com](http://my-app.cloudfoundry.com)
+
+For a working example you can use as a template, see [this code](https://github.com/pmenglund/cf-rake-sinatra)
