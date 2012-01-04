@@ -10,7 +10,7 @@ show started, and this example will include a 'Post' model.
 
     require 'rubygems'
     require 'sinatra'
-    require 'datamapper' # metagem, requires common plugins too.
+    require 'data_mapper' # metagem, requires common plugins too.
 
     # need install dm-sqlite-adapter
     DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/blog.db")
