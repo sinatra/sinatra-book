@@ -59,7 +59,7 @@ Take a more in-depth look at [Sinatra's routes][routes], and see for yourself.
 
 ## Filters
 
-Sinatra offers a way for you too hook into the request chain of your
+Sinatra offers a way for you to hook into the request chain of your
 application via [Filters][filters].
 
 Filters define two methods available, `before` and `after` which both accept a
