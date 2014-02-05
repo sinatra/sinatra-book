@@ -12,16 +12,34 @@ module Book
     doc << toc
     doc << content
     if pdf
-      kit = PDFKit.new(doc, :page_size=>'Letter')
-      kit.stylesheets << "#{ASSETS_DIR}/print.css"
-      pdf = kit.to_pdf
-      FileUtils.mkdir_p OUTPUT_DIR
-      file = kit.to_file("#{OUTPUT_DIR}/sinatra-book.pdf")
+      print_ribbon do
+        say "Processing the source..."
+
+        kit = PDFKit.new(doc, :page_size=>'Letter')
+        kit.stylesheets << "#{ASSETS_DIR}/print.css"
+        pdf = kit.to_pdf
+        FileUtils.mkdir_p OUTPUT_DIR
+        file = kit.to_file("#{OUTPUT_DIR}/sinatra-book.pdf")
+
+        say "Done building the book. Find it in the output/ directory"
+      end
     end
+
     return doc
   end
 
   private
+
+  def print_ribbon(&blk)
+    puts "-" * 80
+    blk.call
+    puts "-" * 80
+  end
+
+  def say(string)
+    puts string
+  end
+
   def header
     <<-header
       <div id="header">
