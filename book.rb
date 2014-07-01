@@ -8,6 +8,8 @@ module Book
   OUTPUT_DIR = File.join(File.dirname(__FILE__), "output")
 
   def build(pdf=false)
+    check_if_wkhtmltopdf_is_available!
+
     doc = header
     doc << toc
     doc << content
@@ -63,5 +65,24 @@ module Book
       end
     end
     return s.join("\n\n* * *\n\n")
+  end
+
+  def check_if_wkhtmltopdf_is_available!
+    unless system('which wkhtmltopdf')
+      message = <<-EOF
+
+
+      This command needs the "wkhtmltopdf" binary to be available on the
+      system. The installation instructions for various OS platforms are
+      available at this link:
+
+      https://github.com/pdfkit/pdfkit/wiki/Installing-WKHTMLTOPDF
+
+      Please install that binary first and then run the builder. Aborting now.
+      EOF
+
+      puts message
+      exit(1)
+    end
   end
 end
