@@ -27,7 +27,7 @@ well structured set of directories to hold many of the components that make up
 a larger application.  Remember that this file structure is just a suggestion.
 
 ```
-|- config.ru            # A rackup file. Load server.rb, and 
+|- config.ru            # A rackup file. Load server.rb, and
 |- server.rb            # Loads all files, is the base class
 |- app/
 \--- routes/
@@ -50,7 +50,7 @@ class Server < Sinatra::Base
   end
 end
 
-# Load all route files
+ # Load all route files
 Dir[File.dirname(__FILE___) + "/app/routes/**"].each do |route|
   require route
 end
@@ -59,7 +59,7 @@ end
 And the route files look something like:
 
 ```ruby
-# users.rb
+ # users.rb
 class Server < Sinatra::Base
   get '/users/:id' do
     erb :"users/show"
@@ -68,5 +68,3 @@ class Server < Sinatra::Base
   # more routes...
 end
 ```
-
-
