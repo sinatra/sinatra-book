@@ -23,7 +23,7 @@ testing.
 Imagine you have an application like this:
 
 ```ruby
-# myapp.rb
+ # myapp.rb
 require 'sinatra'
 
 get '/' do
@@ -39,7 +39,7 @@ You have to define an `app` method pointing to your application class (which is
 `Sinatra::Application` per default):
 
 ```ruby
-begin 
+begin
   # try to use require_relative first
   # this only works for 1.9
   require_relative 'my-app.rb'
@@ -58,7 +58,7 @@ class MyAppTest < Test::Unit::TestCase
   def app
     Sinatra::Application
   end
-  
+
   def test_my_default
     get '/'
     assert last_response.ok?
@@ -101,7 +101,7 @@ Use `set_cookie` for setting and removing cookies, and the access them in your r
 ```ruby
 response.set_cookie 'foo=bar'
 get '/'
-assert_equal 'Hello bar!', last_response.body 
+assert_equal 'Hello bar!', last_response.body
 ```
 
 ### Asserting Expectations About The Response
@@ -171,5 +171,3 @@ end
 
 Now all `TestCase` subclasses will automatically have `Rack::Test`
 available to them.
-
-

@@ -44,7 +44,7 @@ Here's an example of using CoffeeScript with Sinatra's template rendering
 engine Tilt:
 
 ```ruby
-## You'll need to require coffee-script in your app
+ ## You'll need to require coffee-script in your app
 require 'coffee-script'
 
 get '/application.js' do
@@ -75,14 +75,14 @@ namespace :js do
   task :compile do
     source = "#{File.dirname(__FILE__)}/src/"
     javascripts = "#{File.dirname(__FILE__)}/public/javascripts/"
-    
+
     Dir.foreach(source) do |cf|
-      unless cf == '.' || cf == '..' 
-        js = CoffeeScript.compile File.read("#{source}#{cf}") 
+      unless cf == '.' || cf == '..'
+        js = CoffeeScript.compile File.read("#{source}#{cf}")
         open "#{javascripts}#{cf.gsub('.coffee', '.js')}", 'w' do |f|
           f.puts js
-        end 
-      end 
+        end
+      end
     end
   end
 end
@@ -107,4 +107,3 @@ in your application, these are a great place to start:
 [rake]: http://rake.rubyforge.org/
 [nodejs]: http://nodejs.org/
 [ruby-coffee-script]: http://github.com/josh/ruby-coffee-script
-
