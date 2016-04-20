@@ -87,7 +87,7 @@ Sinatra is installed, how about making your first application?
 ```ruby
 require 'rubygems'
 
-# If you're using bundler, you will need to add this
+  # If you're using bundler, you will need to add this
 require 'bundler/setup'
 
 require 'sinatra'
